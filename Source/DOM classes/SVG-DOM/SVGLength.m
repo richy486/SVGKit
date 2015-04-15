@@ -23,7 +23,6 @@
 - (void)dealloc {
     self.valueAsString = nil;
     self.internalCSSPrimitiveValue = nil;
-    [super dealloc];
 }
 
 - (id)init
@@ -94,7 +93,7 @@
 
 +(SVGLength*) svgLengthZero
 {
-	SVGLength* result = [[[SVGLength alloc] initWithCSSPrimitiveValue:nil] autorelease];
+	SVGLength* result = [[SVGLength alloc] initWithCSSPrimitiveValue:nil];
 	
 	return result;
 }
@@ -102,12 +101,12 @@
 static float cachedDevicePixelsPerInch;
 +(SVGLength*) svgLengthFromNSString:(NSString*) s
 {
-	CSSPrimitiveValue* pv = [[[CSSPrimitiveValue alloc] init] autorelease];
+	CSSPrimitiveValue* pv = [[CSSPrimitiveValue alloc] init];
 	
 	pv.pixelsPerInch = cachedDevicePixelsPerInch;
 	pv.cssText = s;
 	
-	SVGLength* result = [[[SVGLength alloc] initWithCSSPrimitiveValue:pv] autorelease];
+	SVGLength* result = [[SVGLength alloc] initWithCSSPrimitiveValue:pv];
 	
 	return result;
 }

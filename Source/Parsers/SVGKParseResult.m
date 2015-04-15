@@ -17,8 +17,6 @@
     self.namespacesEncountered = nil;
     self.parsedDocument = nil;
     self.rootOfSVGTree = nil;
-    
-    [super dealloc];
 }
 
 - (id)init

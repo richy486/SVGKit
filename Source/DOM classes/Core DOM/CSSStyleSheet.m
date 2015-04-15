@@ -12,7 +12,6 @@
 - (void)dealloc {
     self.ownerRule = nil;
     self.cssRules = nil;
-    [super dealloc];
 }
 
 /**
@@ -37,12 +36,12 @@
 	NSCharacterSet *whitespaceSet = [NSCharacterSet whitespaceAndNewlineCharacterSet];
 	rule = [rule stringByTrimmingCharactersInSet:whitespaceSet];
 	
-	//             DDLogVerbose(@"A substringie %@", idStyleString);
+//	             DDLogVerbose(@"A substringie %@", idStyleString);
 	
 	NSArray* stringSplitContainer = [rule componentsSeparatedByString:@"{"];
 	if( [stringSplitContainer count] >= 2 ) //not necessary unless using shitty svgs
 	{
-		CSSStyleRule* newRule = [[[CSSStyleRule alloc] initWithSelectorText:[stringSplitContainer objectAtIndex:0] styleText:[stringSplitContainer objectAtIndex:1]] autorelease];
+		CSSStyleRule* newRule = [[CSSStyleRule alloc] initWithSelectorText:[stringSplitContainer objectAtIndex:0] styleText:[stringSplitContainer objectAtIndex:1]];
 		
 		[self.cssRules.internalArray insertObject:newRule atIndex:index-1]; // CSS says you insert "BEFORE" the index, which is the opposite of most C-based programming languages
 		
@@ -67,7 +66,7 @@
     self = [super init];
     if (self)
 	{
-		self.cssRules = [[[CSSRuleList alloc]init] autorelease];
+		self.cssRules = [[CSSRuleList alloc]init];
 		@autoreleasepool { //creating lots of autoreleased strings, not helpful for older devices
 			
 			/**

@@ -47,12 +47,4 @@
 	_stopColor.a = (_stopOpacity * 255);
 }
 
-//no memory allocated by this subclass
-//-(void)dealloc
-//{
-//    
-//    
-//    [super dealloc];
-//}
-
 @end

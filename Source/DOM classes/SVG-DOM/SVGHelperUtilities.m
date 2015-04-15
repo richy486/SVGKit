@@ -275,7 +275,7 @@
 	 */
 	CGAffineTransform result = CGAffineTransformConcat( [self transformRelativeIncludingViewportForTransformableOrViewportEstablishingElement:transformableOrSVGSVGElement], parentAbsoluteTransform );
 	
-	//DEBUG: DDLogWarn( @"[%@] self.transformAbsolute: returning: affine( (%2.2f %2.2f %2.2f %2.2f), (%2.2f %2.2f)", [self class], result.a, result.b, result.c, result.d, result.tx, result.ty);
+	DDLogWarn( @"[%@] self.transformAbsolute: returning: affine( (%2.2f %2.2f %2.2f %2.2f), (%2.2f %2.2f)", [self class], result.a, result.b, result.c, result.d, result.tx, result.ty);
 	
 	return result;
 }
@@ -515,7 +515,7 @@
 
 	if (strokeLayer == fillLayer)
 	{
-		return [strokeLayer retain];
+		return strokeLayer;
 	}
 	CALayer* combined = [CALayer layer];
 	
@@ -526,7 +526,7 @@
 	fillLayer.frame = localRect;
 	[combined addSublayer:fillLayer];
 	[combined addSublayer:strokeLayer];
-	return [combined retain];
+	return combined;
 }
 
 + (SVGGradientLayer*)getGradientLayerWithId:(NSString*)gradId forElement:(SVGElement*)svgElement
@@ -588,7 +588,7 @@
 
 +(void) parsePreserveAspectRatioFor:(Element<SVGFitToViewBox>*) element
 {
-    element.preserveAspectRatio = [[SVGAnimatedPreserveAspectRatio new] autorelease]; // automatically sets defaults
+    element.preserveAspectRatio = [SVGAnimatedPreserveAspectRatio new]; // automatically sets defaults
     
     NSString* stringPreserveAspectRatio = [element getAttribute:@"preserveAspectRatio"];
     NSArray* aspectRatioCommands = [stringPreserveAspectRatio componentsSeparatedByString:@" "];

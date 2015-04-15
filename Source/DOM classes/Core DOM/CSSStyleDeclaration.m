@@ -3,7 +3,7 @@
 #import "CSSValue.h"
 #import "CSSValueList.h"
 #import "CSSPrimitiveValue.h"
-#import "CocoaLumberjack/DDFileLogger.h"
+//#import "CocoaLumberjack/DDFileLogger.h"
 
 @interface CSSStyleDeclaration()
 
@@ -20,10 +20,8 @@
 @synthesize parentRule;
 
 - (void)dealloc {
-    [_cssText release];
     self.parentRule = nil;
-  self.internalDictionaryOfStylesByCSSClass = nil;
-    [super dealloc];
+    self.internalDictionaryOfStylesByCSSClass = nil;
 }
 
 - (id)init
@@ -44,9 +42,7 @@
  */
 -(void)setCssText:(NSString *)newCSSText
 {
-	[_cssText release];
 	_cssText = newCSSText;
-	[newCSSText retain];
 	
 	/** and now post-process it, *as required by* the CSS/DOM spec... */
 	NSMutableDictionary* processedStyles = [self NSDictionaryFromCSSAttributes:_cssText];
@@ -94,9 +90,9 @@
 				
 				CSSValue *cssValue;
 				if( [cssValueString rangeOfString:@" "].length > 0 )
-					cssValue = [[[CSSValueList alloc] init] autorelease];
+					cssValue = [[CSSValueList alloc] init];
 				else
-					cssValue = [[[CSSPrimitiveValue alloc] init] autorelease];
+					cssValue = [[CSSPrimitiveValue alloc] init];
 				cssValue.cssText = cssValueString; // has the side-effect of parsing, if required
 				
                 [dict setObject:cssValue
@@ -114,11 +110,11 @@
 		accum[accumIdx++] = c;
 		if (accumIdx >= MAX_ACCUM) {
 			DDLogWarn(@"Buffer ovverun while parsing style sheet - skipping");
-			return [dict autorelease];
+			return dict;
 		}
 	}
 	
-	return [dict autorelease];
+	return dict;
 }
 
 -(NSString*) getPropertyValue:(NSString*) propertyName

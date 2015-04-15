@@ -31,8 +31,6 @@
 - (void)dealloc {
     self.internalDictionary = nil;
 	self.internalDictionaryOfNamespaces = nil;
-	
-    [super dealloc];
 }
 
 -(Node*) getNamedItem:(NSString*) name
@@ -200,8 +198,8 @@
 -(id)copyWithZone:(NSZone *)zone
 {
 	NamedNodeMap* clone = [[NamedNodeMap allocWithZone:zone] init];
-	clone.internalDictionary = [[self.internalDictionary copyWithZone:zone] autorelease];
-	clone.internalDictionaryOfNamespaces = [[self.internalDictionaryOfNamespaces copyWithZone:zone] autorelease];
+	clone.internalDictionary = [self.internalDictionary copyWithZone:zone];
+	clone.internalDictionaryOfNamespaces = [self.internalDictionaryOfNamespaces copyWithZone:zone];
 	
 	return clone;
 }

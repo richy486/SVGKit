@@ -25,7 +25,6 @@
 - (void)dealloc {
     self.width = nil;
     self.height = nil;
-    [super dealloc];
 }
 
 - (void)postProcessAttributesAddingErrorsTo:(SVGKParseResult *)parseResult

@@ -12,3 +12,8 @@
 	#import <UIKit/UIKit.h>
 	#import <Foundation/Foundation.h>
 #endif
+
+#define DDLogWarn(args...) NSLog(args)
+#define DDLogVerbose(args...) NSLog(args)
+#define DDLogError(args...) NSLog(args)
+#define DDLogInfo(args...) NSLog(args)

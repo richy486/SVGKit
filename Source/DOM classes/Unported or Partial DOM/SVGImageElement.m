@@ -28,7 +28,7 @@ CGImageRef SVGImageCGImage(AppleNativeImageRef img)
 #if TARGET_OS_IPHONE
     return img.CGImage;
 #else
-    NSBitmapImageRep* rep = [[[NSBitmapImageRep alloc] initWithCIImage:img] autorelease];
+    NSBitmapImageRep* rep = [[NSBitmapImageRep alloc] initWithCIImage:img];
     return rep.CGImage;
 #endif
 }
@@ -49,12 +49,6 @@ CGImageRef SVGImageCGImage(AppleNativeImageRef img)
 @synthesize height = _height;
 
 @synthesize href = _href;
-
-- (void)dealloc {
-    [_href release], _href = nil;
-
-    [super dealloc];
-}
 
 - (void)postProcessAttributesAddingErrorsTo:(SVGKParseResult *)parseResult {
 	[super postProcessAttributesAddingErrorsTo:parseResult];
@@ -80,7 +74,7 @@ CGImageRef SVGImageCGImage(AppleNativeImageRef img)
 
 - (CALayer *) newLayer
 {
-	CALayer* newLayer = [[CALayerWithClipRender layer] retain];
+	CALayer* newLayer = [CALayerWithClipRender layer];
 	
 	[SVGHelperUtilities configureCALayer:newLayer usingElement:self];
 	
@@ -184,7 +178,7 @@ CGImageRef SVGImageCGImage(AppleNativeImageRef img)
         frame = CGRectApplyAffineTransform(frame, [SVGHelperUtilities transformAbsoluteIncludingViewportForTransformableOrViewportEstablishingElement:self]);
         newLayer.frame = frame;
         
-        newLayer.contents = (id)imageRef;
+        newLayer.contents = (__bridge id)imageRef;
 	}
 		
 #if OLD_CODE

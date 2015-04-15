@@ -11,13 +11,7 @@
 @synthesize media;
 
 - (void)dealloc {
-  [type release];
-  [ownerNode release];
-  [parentStyleSheet release];
-  [href release];
-  [title release];
-  [media release];
-  [super dealloc];
+
 }
 
 @end

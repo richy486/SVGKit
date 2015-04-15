@@ -27,7 +27,7 @@
 
 +(SampleFileInfo*) sampleFileInfoWithFilename:(NSString*) f URL:(NSURL*) s name:(NSString*) n
 {
-	SampleFileInfo* value = [[SampleFileInfo new] autorelease];
+	SampleFileInfo* value = [SampleFileInfo new];
 	
 	value.originalFilename = f;
 	value.originalURL = s;
