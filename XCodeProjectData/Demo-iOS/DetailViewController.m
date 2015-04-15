@@ -250,7 +250,11 @@ CATextLayer *textLayerForLastTappedLayer;
 			
 			UIFont* fontToDraw = [UIFont fontWithName:@"Helvetica"
 												 size:14.0f];
-			CGSize sizeOfTextRect = [textToDraw sizeWithFont:fontToDraw];
+
+            CGSize sizeOfTextRect = [textToDraw boundingRectWithSize:CGSizeMake(1000, 1000)
+                                                       options:NSStringDrawingUsesLineFragmentOrigin
+                                                    attributes:@{NSFontAttributeName: fontToDraw}
+                                                       context:nil].size;
 			
 			textLayerForLastTappedLayer = [[CATextLayer alloc] init];
 			[textLayerForLastTappedLayer setFont:@"Helvetica"];
@@ -271,7 +275,7 @@ CATextLayer *textLayerForLastTappedLayer;
 
 #pragma mark - CRITICAL: this method makes Apple render SVGs in sharp focus
 
--(void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(float)finalScale
+-(void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(CGFloat)finalScale
 {
 	/** NB: very important! The "finalScale" paramter to this method is SLIGHTLY DIFFERENT from the scale that Apple reports in the other delegate methods
 	 

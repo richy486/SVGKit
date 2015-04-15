@@ -126,7 +126,9 @@ void exportPathCommands(void *exportPathCommandsConextPtr, const CGPathElement *
                 
                 if (0 == strcmp("@", methodReturnType)) {
                     
-                    id v = [currentLayer performSelector:message];
+                    IMP imp = [currentLayer methodForSelector:message];
+                    id (*func)(id, SEL) = (void *)imp;
+                    id v = func(currentLayer, message);
                     
                     if (nil == v) {
                         propertyValue = @"nil";

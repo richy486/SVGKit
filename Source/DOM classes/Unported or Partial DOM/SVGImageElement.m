@@ -169,16 +169,21 @@ CGImageRef SVGImageCGImage(AppleNativeImageRef img)
                 cropRect = [self clipFrame:cropRect fromRatio:1.0 / ratioOfRatios];
                 
                 CGImageRef croppedRef = CGImageCreateWithImageInRect(imageRef, cropRect);
-                CGImageRelease(imageRef);
+                
                 imageRef = croppedRef;
             }
         }
+        
+//        CGImageRelease(imageRef);
         
         /** transform our LOCAL path into ABSOLUTE space */
         frame = CGRectApplyAffineTransform(frame, [SVGHelperUtilities transformAbsoluteIncludingViewportForTransformableOrViewportEstablishingElement:self]);
         newLayer.frame = frame;
         
-        newLayer.contents = (__bridge id)imageRef;
+        newLayer.contents = (id)CFBridgingRelease(imageRef);
+        
+        
+        
 	}
 		
 #if OLD_CODE
