@@ -19,6 +19,7 @@
 #import "SVGRect.h"
 
 #import "SVGTransformable.h"
+#import "Logging.h"
 
 @interface SVGElement ()
 

@@ -1,4 +1,5 @@
 #import "SVGKLayer.h"
+#import "Logging.h"
 
 @implementation SVGKLayer
 {

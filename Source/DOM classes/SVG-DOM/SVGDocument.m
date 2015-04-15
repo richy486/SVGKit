@@ -12,6 +12,7 @@
 #import "SVGDocument_Mutable.h"
 
 #import "NamedNodeMap_Iterable.h" // needed for the allPrefixesByNamespace implementation
+#import "Logging.h"
 
 @implementation SVGDocument
 

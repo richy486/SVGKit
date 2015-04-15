@@ -1,6 +1,7 @@
 #import "SVGKExporterUIImage.h"
 
 #import "SVGKImage+CGContext.h" // needed for Context calls
+#import "Logging.h"
 
 @implementation SVGKExporterUIImage
 

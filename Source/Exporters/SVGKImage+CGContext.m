@@ -10,6 +10,7 @@
 
 #import "SVGRect.h"
 #import "SVGSVGElement.h"
+#import "Logging.h"
 
 @implementation SVGKImage (CGContext)
 

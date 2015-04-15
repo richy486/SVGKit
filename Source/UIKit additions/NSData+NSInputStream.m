@@ -7,6 +7,7 @@
 //
 
 #import "NSData+NSInputStream.h"
+#import "Logging.h"
 
 
 #define BUFSIZE 65536U

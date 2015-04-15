@@ -18,6 +18,7 @@
 #import "SVGTitleElement.h"
 #import "SVGTextElement.h"
 #import "TinySVGTextAreaElement.h"
+#import "Logging.h"
 
 #import "SVGDocument_Mutable.h"
 

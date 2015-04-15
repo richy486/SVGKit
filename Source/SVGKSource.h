@@ -19,6 +19,7 @@
  */
 
 #import <Foundation/Foundation.h>
+#import "Logging.h"
 
 @interface SVGKSource : NSObject <NSCopying>
 

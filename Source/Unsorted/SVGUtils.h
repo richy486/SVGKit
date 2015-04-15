@@ -6,6 +6,7 @@
 //
 
 #import <CoreFoundation/CoreFoundation.h>
+#import "Logging.h"
 
 #if TARGET_OS_IPHONE
 

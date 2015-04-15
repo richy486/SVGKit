@@ -1,4 +1,5 @@
 #import "SVGKParseResult.h"
+#import "Logging.h"
 
 @implementation SVGKParseResult
 

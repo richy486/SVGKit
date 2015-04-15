@@ -4,6 +4,7 @@
 #import "CSSValueList.h"
 #import "CSSPrimitiveValue.h"
 //#import "CocoaLumberjack/DDFileLogger.h"
+#import "Logging.h"
 
 @interface CSSStyleDeclaration()
 

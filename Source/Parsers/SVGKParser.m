@@ -30,6 +30,7 @@
 #import "CSSStyleSheet.h"
 #import "StyleSheetList+Mutable.h"
 #import "NSData+NSInputStream.h"
+#import "Logging.h"
 
 @interface SVGKParser()
 @property(nonatomic,retain, readwrite) SVGKSource* source;

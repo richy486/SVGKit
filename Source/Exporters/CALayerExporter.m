@@ -7,6 +7,7 @@
 //
 
 #import "CALayerExporter.h"
+#import "Logging.h"
 
 typedef struct ExportPathCommandsContext {
     __unsafe_unretained NSString* pathName;

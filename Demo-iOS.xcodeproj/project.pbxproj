@@ -633,6 +633,7 @@
 		B9B5F90E1ADD52EA00A52D39 /* SVGKPattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVGKPattern.m; sourceTree = "<group>"; };
 		B9B5F90F1ADD52EA00A52D39 /* SVGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVGUtils.h; sourceTree = "<group>"; };
 		B9B5F9101ADD52EA00A52D39 /* SVGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVGUtils.m; sourceTree = "<group>"; };
+		B9B5FA8E1ADE4E1F00A52D39 /* Logging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Logging.h; sourceTree = "<group>"; };
 		BD15857B199909B800461AA5 /* Coins.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Coins.svg; sourceTree = "<group>"; };
 		BD54E3DA1AB7A13A001039C0 /* parent-clip.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "parent-clip.svg"; sourceTree = "<group>"; };
 		BDC40145199AA41900DFEA27 /* ImageAspectRatio.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ImageAspectRatio.svg; sourceTree = "<group>"; };
@@ -924,6 +925,7 @@
 				B9B5F9011ADD52EA00A52D39 /* UIKit additions */,
 				B9B5F90C1ADD52EA00A52D39 /* Unsorted */,
 				B9B5F9C31ADD536200A52D39 /* Vendor */,
+				B9B5FA8E1ADE4E1F00A52D39 /* Logging.h */,
 			);
 			path = Source;
 			sourceTree = SOURCE_ROOT;

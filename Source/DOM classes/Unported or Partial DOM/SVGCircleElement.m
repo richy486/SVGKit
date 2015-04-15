@@ -6,6 +6,7 @@
 //
 
 #import "SVGCircleElement.h"
+#import "Logging.h"
 
 @implementation SVGCircleElement
 

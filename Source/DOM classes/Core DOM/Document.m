@@ -4,6 +4,7 @@
 #import "DOMHelperUtilities.h"
 
 #import "NodeList+Mutable.h" // needed for access to underlying array, because SVG doesnt specify how lists are made mutable
+#import "Logging.h"
 
 @implementation Document
 
